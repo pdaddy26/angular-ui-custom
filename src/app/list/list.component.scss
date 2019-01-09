@@ -1,0 +1,10 @@
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+    &>label {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+}

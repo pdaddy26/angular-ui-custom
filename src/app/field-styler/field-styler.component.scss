@@ -1,0 +1,18 @@
+.field-container {
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+
+    &>div {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+select {
+    width: 90%;
+}

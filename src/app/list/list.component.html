@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let f of fields">
+    <label [ngStyle]="fieldStyles[f+'#LABEL'].css">{{fieldStyles[f+'#LABEL'].title}}</label>
+    <label>Value</label>
+  </li>
+</ul>

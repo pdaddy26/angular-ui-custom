@@ -1,0 +1,26 @@
+<ul>
+  <li>
+    <div class="field-container">
+      <div class="field-id"><b>Field</b></div>
+      <div class="field-title"><b>Label</b></div>
+      <div class="field-weight"><b>Weight</b></div>
+      <div class="field-weight"><b>Color</b></div>
+    </div>
+  </li>
+  <li *ngFor="let f of fields">
+    <div class="field-container">
+      <div>{{f}}</div>
+      <div><input type="text" [(ngModel)]="fieldStyles[f+'#LABEL'].title" /></div>
+      <div>
+        <select [(ngModel)]="fieldStyles[f+'#LABEL'].css['font-weight']">
+          <option *ngFor="let weight of fontWeights" [value]="weight">{{weight}}</option>
+        </select>
+      </div>
+      <div>
+        <input type="color" [(ngModel)]="fieldStyles[f+'#LABEL'].css['color']"/>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- <button (click)="print()">print</button> -->

@@ -1,0 +1,17 @@
+.controls-container {
+    border: 1px solid black;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.style-container {
+    border: 1px solid blue;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}

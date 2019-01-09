@@ -7,7 +7,13 @@
       <div class="field-weight"><b>Color</b></div>
     </div>
   </li>
-  <li *ngFor="let f of fields">
+  <li draggable="true" (dragover)="onDragOver($event)" 
+                        (dragenter)="onDragEnter($event)"
+                        (dragleave)="onDragLeave($event)"
+                        (dragstart)="onDragStart($event, f)" 
+                        (drop)="onDrop($event, f)"
+                        *ngFor="let f of fields"
+      [id]="f">
     <div class="field-container">
       <div>{{f}}</div>
       <div><input type="text" [(ngModel)]="fieldStyles[f+'#LABEL'].title" /></div>

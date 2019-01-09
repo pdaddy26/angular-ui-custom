@@ -1,7 +1,14 @@
 <div class="container">
   <div class="controls-container">
-    <app-list [fields]="fields" [fieldStyles]="fieldStyles"></app-list>
-    <app-grid [fields]="fields" [fieldStyles]="fieldStyles"></app-grid>
+    <div>
+      <h1>LIST</h1>
+      <app-list [fields]="fields" [fieldStyles]="fieldStyles"></app-list>
+    </div>
+
+    <div>
+      <h1>GRID</h1>
+      <app-grid [fields]="fields" [fieldStyles]="fieldStyles"></app-grid>
+    </div>
   </div>
   <div class="style-container">
     <app-field-styler [fields]="fields" [fieldStyles]="fieldStyles"></app-field-styler>

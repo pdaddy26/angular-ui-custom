@@ -4,8 +4,17 @@
 <div class="list-container">
   <ul class="card-shadow">
     <li [appOrdable]="fields" [id]="f" *ngFor="let f of fields">
-      <input class="editableLabel" type="text" [ngStyle]="fieldStyles[f+'#LABEL'].css" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />
-      <label>Value</label>
+      <div class="item-container">
+
+        <div class="label-container">
+          <input class="editableLabel" type="text" [ngStyle]="fieldStyles[f+'#LABEL'].css" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />
+        </div>
+        
+        <div class="value-container">
+          <label>Value</label>
+        </div>
+
+      </div>
     </li>
   </ul>
 </div>

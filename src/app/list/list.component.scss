@@ -34,3 +34,18 @@ ul {
 }
 
 
+.item-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.label-container {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.value-container {
+    flex-grow: 1;
+    flex-basis: 0;
+}

@@ -6,7 +6,7 @@
   <table class="card-shadow">
     <thead>
       <tr>
-        <th *ngFor="let f of fields">
+        <th [appOrdable]="fields" [id]="f" *ngFor="let f of fields">
           <input class="editableLabel" type="text" [ngStyle]="fieldStyles[f+'#LABEL'].css" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />
         </th>
       </tr>

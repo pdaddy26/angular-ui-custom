@@ -1,32 +1,36 @@
-<ul>
-  <li>
-    <div class="header-container">
-      <div>Field</div>
-      <div>Label</div>
-      <div>Weight</div>
-      <div>Color</div>
-    </div>
-  </li>
-  <li class="item" #listItem draggable="true" 
-                        (dragenter)="onDragEnter($event, listItem)"
-                        (dragover)="onDragOver($event, listItem)"
-                        (dragstart)="onDragStart($event, listItem)" 
-                        (drop)="onDrop($event, listItem)"
-                        *ngFor="let f of fields"
-      [id]="f">
-    <div class="field-container">
-      <div>{{f}}</div>
-      <div><input type="text" [(ngModel)]="fieldStyles[f+'#LABEL'].title" /></div>
-      <div>
-        <select [(ngModel)]="fieldStyles[f+'#LABEL'].css['font-weight']">
-          <option *ngFor="let weight of fontWeights" [value]="weight">{{weight}}</option>
-        </select>
-      </div>
-      <div>
-        <input type="color" [(ngModel)]="fieldStyles[f+'#LABEL'].css['color']"/>
-      </div>
-    </div>
-  </li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>FIELD</th>
+      <th>LABEL</th>
+      <th>WEIGHT</th>
+      <th>COLOR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr #listItem draggable="true" 
+      (dragenter)="onDragEnter($event, listItem)" 
+      (dragover)="onDragOver($event, listItem)"
+      (dragstart)="onDragStart($event, listItem)"
+      (dragend)="onDragEnd($event, listItem)"
+      (drop)="onDrop($event, listItem)" 
+      *ngFor="let f of fields" [id]="f">
+      <td>
+        {{f}}
+      </td>
+      <td>
+        <input class="label" type="text" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />
+      </td>
+      <td>
+          <select [(ngModel)]="fieldStyles[f+'#LABEL'].css['font-weight']">
+            <option *ngFor="let weight of fontWeights" [value]="weight">{{weight}}</option>
+          </select>
+      </td>
+      <td>
+        <input type="color" [(ngModel)]="fieldStyles[f+'#LABEL'].css['color']" />
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- <button (click)="print()">print</button> -->

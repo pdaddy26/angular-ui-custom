@@ -53,11 +53,17 @@ export class FieldStylerComponent implements OnInit {
       return;
     }
     let dragElId = this.dragElement.getAttribute('id')
-    let enterItemId = event.target.id;
+    let enterItemId = listItem.getAttribute('id');
+    
     let dragElIndex = this.fields.findIndex(f => f === dragElId);
     let enterElIndex = this.fields.findIndex(f => f === enterItemId);
+
     this.fields.splice(dragElIndex, 1);
     this.fields.splice(enterElIndex, 0, dragElId);
+  }
+
+  onDragEnd(event, listItem) {
+    this.renderer.removeClass(this.dragElement, 'over');
   }
 
   onDrop(event, listItem) {

@@ -15,7 +15,9 @@ export class AppComponent implements OnInit {
     this.fields = [
       "Material/Name",
       "Material/Description",
-      "Material/LookupCode"
+      "Material/LookupCode",
+      "Carrier/LookupCode",
+      "LoadContainer/Name"
     ];
   }
 

@@ -1,4 +1,7 @@
-<ul>
+<div class="title-container">
+  <label class="title">LIST</label>
+</div>
+<ul class="card-shadow">
   <li *ngFor="let f of fields">
     <label [ngStyle]="fieldStyles[f+'#LABEL'].css">{{fieldStyles[f+'#LABEL'].title}}</label>
     <label>Value</label>

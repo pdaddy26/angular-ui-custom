@@ -1,7 +1,3 @@
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
 
 th, td {
     padding: 8px;
@@ -11,8 +7,31 @@ th, td {
 
 table {
     width: 100%;
+    background-color: white;
+    position: relative;
+    top: -30px;
+    border: 0;
+    border-collapse: collapse;
 }
 
-tbody>tr:hover {
-    background-color: #ddd;
+tbody {
+    tr {
+        border-bottom: 1px solid #EBF2F7;
+        color: #909396;
+
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+}
+
+thead {
+    border-bottom: 1px solid #EBF2F7;
+    color: #95a0b9;
+}
+
+.container {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }

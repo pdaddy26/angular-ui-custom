@@ -3,14 +3,13 @@ $transition: 600ms;
     display: flex;
     flex-direction: row;
     height: 100vh;
+    background-color: #D2D7E5;
 }
 
 .controls-container {
     border-right: 1px solid #ddd;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     z-index: 1000;
     flex:1;
-    padding: 10px;
 }
 
 .style-container {

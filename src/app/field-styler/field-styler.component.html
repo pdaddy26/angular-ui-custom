@@ -1,17 +1,17 @@
 <ul>
   <li>
-    <div class="field-container">
-      <div class="field-id"><b>Field</b></div>
-      <div class="field-title"><b>Label</b></div>
-      <div class="field-weight"><b>Weight</b></div>
-      <div class="field-weight"><b>Color</b></div>
+    <div class="header-container">
+      <div>Field</div>
+      <div>Label</div>
+      <div>Weight</div>
+      <div>Color</div>
     </div>
   </li>
-  <li draggable="true" (dragover)="onDragOver($event)" 
-                        (dragenter)="onDragEnter($event)"
-                        (dragleave)="onDragLeave($event)"
-                        (dragstart)="onDragStart($event, f)" 
-                        (drop)="onDrop($event, f)"
+  <li class="item" #listItem draggable="true" 
+                        (dragenter)="onDragEnter($event, listItem)"
+                        (dragover)="onDragOver($event, listItem)"
+                        (dragstart)="onDragStart($event, listItem)" 
+                        (drop)="onDrop($event, listItem)"
                         *ngFor="let f of fields"
       [id]="f">
     <div class="field-container">

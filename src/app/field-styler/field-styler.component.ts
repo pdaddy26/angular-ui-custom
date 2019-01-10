@@ -12,7 +12,7 @@ export class FieldStylerComponent implements OnInit {
   fieldStyles: {[key: string]: FieldConfig};
 
   @Input()
-  fields: string[]
+  fields: string[];
 
   fontWeights = ['normal', 'bold'];
 
@@ -32,39 +32,37 @@ export class FieldStylerComponent implements OnInit {
     console.log(this.fieldStyles)
   }
 
-  onDragStart(event, id) {
+
+  dragElement;
+  onDragStart(event, listItem) {
+    console.log("start", listItem);
+    this.dragElement = listItem;
     event.dataTransfer.effectAllowed = 'move';
-    event.dataTransfer.setData('text/plain', id);
-    console.log("start", event.srcElement);
   }
 
-  onDragOver(event) {
+  onDragOver(event, listItem) {
     event.preventDefault();
     event.dataTransfer.dropEffect = 'move';
     return false;
   }
 
-  onDragEnter(event) {
-    console.log("enter", event.srcElement);
+  onDragEnter(event, listItem) {
+    // console.log("enter", listItem);
+    if(this.dragElement === listItem) {
+      this.renderer.addClass(this.dragElement, 'over');
+      return;
+    }
+    let dragElId = this.dragElement.getAttribute('id')
+    let enterItemId = event.target.id;
+    let dragElIndex = this.fields.findIndex(f => f === dragElId);
+    let enterElIndex = this.fields.findIndex(f => f === enterItemId);
+    this.fields.splice(dragElIndex, 1);
+    this.fields.splice(enterElIndex, 0, dragElId);
   }
 
-  onDragLeave(event) {
-    console.log("leave", event.srcElement);
-  }
-
-  onDrop(event, id) {
-    console.log("drop", event.srcElement);
-    event.stopPropagation();
-      
-    let start_element_id = event.dataTransfer.getData("text/plain");
-    console.log('swap', start_element_id, id);
-    this.swap(start_element_id, id);
-  }
-
-  private swap(field1, field2) {
-    let f1Index = this.fields.findIndex(f => f === field1);
-    let f2Index = this.fields.findIndex(f => f === field2);
-    this.fields[f1Index] = field2;
-    this.fields[f2Index] = field1;
+  onDrop(event, listItem) {
+    console.log("drop", event, listItem);
+    event.preventDefault();
+    this.renderer.removeClass(this.dragElement, 'over');
   }
 }

@@ -8,13 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr #listItem draggable="true" 
-      (dragenter)="onDragEnter($event, listItem)" 
-      (dragover)="onDragOver($event, listItem)"
-      (dragstart)="onDragStart($event, listItem)"
-      (dragend)="onDragEnd($event, listItem)"
-      (drop)="onDrop($event, listItem)" 
-      *ngFor="let f of fields" [id]="f">
+    <tr [appOrdable]="fields" *ngFor="let f of fields" [id]="f">
       <td>
         <label>{{f}}</label>
       </td>

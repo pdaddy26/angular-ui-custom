@@ -31,44 +31,4 @@ export class FieldStylerComponent implements OnInit {
   print() {
     console.log(this.fieldStyles)
   }
-
-
-  dragElement;
-  onDragStart(event, listItem) {
-    console.log("start", listItem);
-    this.dragElement = listItem;
-    event.dataTransfer.effectAllowed = 'move';
-  }
-
-  onDragOver(event, listItem) {
-    event.preventDefault();
-    event.dataTransfer.dropEffect = 'move';
-    return false;
-  }
-
-  onDragEnter(event, listItem) {
-    // console.log("enter", listItem);
-    if(this.dragElement === listItem) {
-      this.renderer.addClass(this.dragElement, 'over');
-      return;
-    }
-    let dragElId = this.dragElement.getAttribute('id')
-    let enterItemId = listItem.getAttribute('id');
-    
-    let dragElIndex = this.fields.findIndex(f => f === dragElId);
-    let enterElIndex = this.fields.findIndex(f => f === enterItemId);
-
-    this.fields.splice(dragElIndex, 1);
-    this.fields.splice(enterElIndex, 0, dragElId);
-  }
-
-  onDragEnd(event, listItem) {
-    this.renderer.removeClass(this.dragElement, 'over');
-  }
-
-  onDrop(event, listItem) {
-    console.log("drop", event, listItem);
-    event.preventDefault();
-    this.renderer.removeClass(this.dragElement, 'over');
-  }
 }

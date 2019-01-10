@@ -6,20 +6,25 @@ import { FieldStylerComponent } from './field-styler/field-styler.component';
 import { ListComponent } from './list/list.component';
 import { GridComponent } from './grid/grid.component';
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { OrdableDirective } from './drag-n-drop/ordable.directive';
+import { DragAndDropService } from './drag-n-drop/drag-and-drop.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     FieldStylerComponent,
     ListComponent,
-    GridComponent
+    GridComponent,
+    OrdableDirective
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    DragAndDropService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,7 @@
 </div>
 <div class="list-container">
   <ul class="card-shadow">
-    <li *ngFor="let f of fields">
+    <li [appOrdable]="fields" [id]="f" *ngFor="let f of fields">
       <input class="editableLabel" type="text" [ngStyle]="fieldStyles[f+'#LABEL'].css" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />
       <label>Value</label>
     </li>

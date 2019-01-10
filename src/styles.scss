@@ -10,6 +10,18 @@ input {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+input.editableLabel {
+    color:#666666;
+    border: 1px solid transparent;
+    height: 100%;
+
+    &:hover {
+        border: 1px solid #f2f2f2;
+    }
+    font-size: 15px;
+}
+
+
 select {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

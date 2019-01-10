@@ -6,6 +6,7 @@ th, td {
 }
 
 table {
+    table-layout: fixed;
     width: 100%;
     background-color: white;
     position: relative;
@@ -27,6 +28,9 @@ tbody {
 
 thead {
     border-bottom: 1px solid #EBF2F7;
+}
+
+thead input {
     color: #95a0b9;
 }
 

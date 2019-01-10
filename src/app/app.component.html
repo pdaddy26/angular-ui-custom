@@ -1,5 +1,6 @@
 <div class="container">
   <div class="controls-container">
+    <!-- <button (click)="toggle()">SHOW</button> -->
     <div>
       <h1>LIST</h1>
       <app-list [fields]="fields" [fieldStyles]="fieldStyles"></app-list>
@@ -10,7 +11,7 @@
       <app-grid [fields]="fields" [fieldStyles]="fieldStyles"></app-grid>
     </div>
   </div>
-  <div class="style-container">
+  <div #styleContainer class="style-container">
     <app-field-styler [fields]="fields" [fieldStyles]="fieldStyles"></app-field-styler>
   </div>
 </div>

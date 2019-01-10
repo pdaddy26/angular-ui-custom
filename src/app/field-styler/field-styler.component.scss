@@ -6,6 +6,10 @@ select {
 
 .over {
     box-shadow: 0px 0px 5px gray;
+    background-color: white;
+    td * {
+        visibility: hidden;
+    }
 }
 
 table {

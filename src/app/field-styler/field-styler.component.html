@@ -16,7 +16,7 @@
       (drop)="onDrop($event, listItem)" 
       *ngFor="let f of fields" [id]="f">
       <td>
-        {{f}}
+        <label>{{f}}</label>
       </td>
       <td>
         <input class="label" type="text" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />

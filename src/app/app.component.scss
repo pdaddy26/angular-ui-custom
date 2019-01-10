@@ -1,19 +1,20 @@
-.controls-container {
-    border: 1px solid black;
-    flex-grow: 1;
-    flex-basis: 0;
-    padding: 10px;
-}
-
-.style-container {
-    flex-grow: 1;
-    flex-basis: 0;
-    background-color: #e2e1e0;
-    padding: 20px;
-}
-
+$transition: 600ms;
 .container {
     display: flex;
     flex-direction: row;
     height: 100vh;
+}
+
+.controls-container {
+    border-right: 1px solid #ddd;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 1000;
+    flex:1;
+    padding: 10px;
+}
+
+.style-container {
+    background-color: #e2e1e0;
+    padding: 20px;
+    flex: 0 0 10px;
 }

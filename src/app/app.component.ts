@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChildren, ViewChild, ViewContainerRef, ElementRef } from '@angular/core';
 import { FieldConfig } from './field-styler/field-config.model';
 
 @Component({
@@ -11,6 +11,12 @@ export class AppComponent implements OnInit {
   fieldStyles: {[key: string]: FieldConfig} = {}
   fields: string[];
 
+  @ViewChild('styleContainer') styleContainer: ElementRef;
+
+  constructor(private renderer: Renderer2) {
+
+  }
+
   ngOnInit() {
     this.fields = [
       "Material/Name",
@@ -19,6 +25,15 @@ export class AppComponent implements OnInit {
       "Carrier/LookupCode",
       "LoadContainer/Name"
     ];
+  }
+
+  toggle() {
+    if(this.styleContainer.nativeElement.classList.contains('hide')) {
+      this.renderer.removeClass(this.styleContainer.nativeElement, 'hide');
+    }
+    else {
+      this.renderer.addClass(this.styleContainer.nativeElement, 'hide');
+    }
   }
 
 }

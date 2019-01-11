@@ -7,7 +7,9 @@
       <div class="item-container">
 
         <div class="label-container">
-          <input class="editableLabel" type="text" [ngStyle]="fieldStyles[f+'#LABEL'].css" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />
+          <input class="editableLabel" type="text" 
+                 [ngStyle]="getStyle(f+'#LABEL').css" 
+                 [(ngModel)]="getStyle(f+'#LABEL').title" />
         </div>
         
         <div class="value-container">

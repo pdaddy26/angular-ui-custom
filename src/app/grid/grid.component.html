@@ -7,7 +7,9 @@
     <thead>
       <tr>
         <th [appOrdable]="fields" [id]="f" *ngFor="let f of fields">
-          <input class="editableLabel" type="text" [ngStyle]="fieldStyles[f+'#LABEL'].css" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />
+          <input class="editableLabel" type="text" 
+                [ngStyle]="getStyle(f+'#LABEL').css" 
+                [(ngModel)]="getStyle(f+'#LABEL').title" />
         </th>
       </tr>
     </thead>

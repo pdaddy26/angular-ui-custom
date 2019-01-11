@@ -9,13 +9,19 @@ import { FieldConfig } from '../field-styler/field-config.model';
 export class ListComponent implements OnInit {
 
   @Input()
-  fieldStyles: {[key: string]: FieldConfig};
+  fieldStyles: FieldConfig[];
   @Input()
   fields: string[];
 
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => console.log(this.fieldStyles), 5000);
+  }
+
+  getStyle(id) {
+    let s = this.fieldStyles.find(f => f.id === id);
+    return s;
   }
 
 }

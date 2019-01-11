@@ -13,15 +13,15 @@
         <label>{{f}}</label>
       </td>
       <td>
-        <input class="editableLabel" type="text" [(ngModel)]="fieldStyles[f+'#LABEL'].title" />
+        <input class="editableLabel" type="text" [(ngModel)]="getStyle(f+'#LABEL').title" />
       </td>
       <td>
-          <select [(ngModel)]="fieldStyles[f+'#LABEL'].css['font-weight']">
+          <select [(ngModel)]="getStyle(f+'#LABEL').css['font-weight']">
             <option *ngFor="let weight of fontWeights" [value]="weight">{{weight}}</option>
           </select>
       </td>
       <td>
-        <input type="color" [(ngModel)]="fieldStyles[f+'#LABEL'].css['color']" />
+        <input type="color" [(ngModel)]="getStyle(f+'#LABEL').css['color']" />
       </td>
     </tr>
   </tbody>

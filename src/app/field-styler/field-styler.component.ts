@@ -8,8 +8,7 @@ import { FieldConfig } from './field-config.model';
 })
 export class FieldStylerComponent implements OnInit {
 
-  @Input()
-  fieldStyles: {[key: string]: FieldConfig};
+  fieldStyles: FieldConfig[] = new Array<FieldConfig>();
 
   @Input()
   fields: string[];
@@ -22,10 +21,15 @@ export class FieldStylerComponent implements OnInit {
     this.fields.forEach(f => {
       let id = `${f}#LABEL`;
       let fieldStyle = new FieldConfig();
+      fieldStyle.id = id;
       fieldStyle.css = {};
       fieldStyle.title = f;
-      this.fieldStyles[id] = fieldStyle;
+      this.fieldStyles.push(fieldStyle);
     })
+  }
+
+  getStyle(id) {
+    return this.fieldStyles.find(f => f.id === id);
   }
 
   print() {

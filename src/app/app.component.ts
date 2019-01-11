@@ -8,7 +8,6 @@ import { FieldConfig } from './field-styler/field-config.model';
 })
 export class AppComponent implements OnInit {
 
-  fieldStyles: {[key: string]: FieldConfig} = {}
   fields: string[];
 
   @ViewChild('styleContainer') styleContainer: ElementRef;

@@ -12,6 +12,8 @@ export class GridComponent implements OnInit {
   fieldStyles: FieldConfig[];
   @Input()
   fields: string[];
+  @Input()
+  data: Array<Object>;
   
   constructor() { }
 
@@ -19,8 +21,7 @@ export class GridComponent implements OnInit {
   }
 
   getStyle(id) {
-    let s = this.fieldStyles.find(f => f.id === id);
-    return s;
+    return this.fieldStyles.find(f => f.id === id);
   }
 
 }

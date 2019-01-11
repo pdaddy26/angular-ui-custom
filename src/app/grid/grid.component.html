@@ -14,17 +14,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td *ngFor="let f of fields">Value</td>
-      </tr>
-      <tr>
-        <td *ngFor="let f of fields">Value</td>
-      </tr>
-      <tr>
-        <td *ngFor="let f of fields">Value</td>
-      </tr>
-      <tr>
-        <td *ngFor="let f of fields">Value</td>
+      <tr *ngFor="let d of data">
+        <td *ngFor="let f of fields; let i=index">
+          <label>{{d[f]}}</label>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -33,6 +33,13 @@ ul {
     top: -30px;
 }
 
+.list-item-container {
+    width: 100%;
+
+    > li {
+        border: 0;
+    }
+}
 
 .item-container {
     width: 100%;

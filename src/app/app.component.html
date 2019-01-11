@@ -2,11 +2,15 @@
   <div class="controls-container card-shadow">
     <!-- <button (click)="toggle()">SHOW</button> -->
     <div>
-      <app-list [fields]="fields" [fieldStyles]="styler.fieldStyles"></app-list>
+      <app-list [fields]="fields" 
+                [fieldStyles]="styler.fieldStyles"
+                [data]="data"></app-list>
     </div>
 
     <div>
-      <app-grid [fields]="fields" [fieldStyles]="styler.fieldStyles"></app-grid>
+      <app-grid [fields]="fields" 
+                [fieldStyles]="styler.fieldStyles"
+                [data]="data"></app-grid>
     </div>
   </div>
   <div #styleContainer class="style-container">

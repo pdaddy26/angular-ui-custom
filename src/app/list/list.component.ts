@@ -12,16 +12,16 @@ export class ListComponent implements OnInit {
   fieldStyles: FieldConfig[];
   @Input()
   fields: string[];
+  @Input()
+  data: Array<Object>;
 
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => console.log(this.fieldStyles), 5000);
   }
 
   getStyle(id) {
-    let s = this.fieldStyles.find(f => f.id === id);
-    return s;
+    return this.fieldStyles.find(f => f.id === id);
   }
 
 }

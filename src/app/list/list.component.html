@@ -3,20 +3,23 @@
 </div>
 <div class="list-container">
   <ul class="card-shadow">
-    <li [appOrdable]="fields" [id]="f" *ngFor="let f of fields">
-      <div class="item-container">
+    <li *ngFor="let d of data">
 
-        <div class="label-container">
-          <input class="editableLabel" type="text" 
-                 [ngStyle]="getStyle(f+'#LABEL').css" 
-                 [(ngModel)]="getStyle(f+'#LABEL').title" />
-        </div>
-        
-        <div class="value-container">
-          <label>Value</label>
-        </div>
+      <ul class="list-item-container">
+        <li [appOrdable]="fields" [id]="f" *ngFor="let f of fields; let i = index">
+            <div class="item-container">
+              <div class="label-container">
+              <input class="editableLabel" type="text" 
+                      [ngStyle]="getStyle(f+'#LABEL').css" 
+                      [(ngModel)]="getStyle(f+'#LABEL').title" />
+              </div>
+              <div class="value-container">
+                  <label>{{d[f]}}</label>
+              </div>
+            </div>
+        </li>
+      </ul>
 
-      </div>
     </li>
   </ul>
 </div>

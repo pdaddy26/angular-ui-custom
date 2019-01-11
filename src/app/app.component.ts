@@ -9,6 +9,7 @@ import { FieldConfig } from './field-styler/field-config.model';
 export class AppComponent implements OnInit {
 
   fields: string[];
+  data: Array<Object>;
 
   @ViewChild('styleContainer') styleContainer: ElementRef;
 
@@ -24,15 +25,22 @@ export class AppComponent implements OnInit {
       "Carrier/LookupCode",
       "LoadContainer/Name"
     ];
-  }
 
-  toggle() {
-    if(this.styleContainer.nativeElement.classList.contains('hide')) {
-      this.renderer.removeClass(this.styleContainer.nativeElement, 'hide');
-    }
-    else {
-      this.renderer.addClass(this.styleContainer.nativeElement, 'hide');
-    }
+    this.data = [
+      {
+        "Material/Name": "Pepsi",
+        "Material/Description": "Soft Drinks",
+        "Material/LookupCode": "PEP",
+        "Carrier/LookupCode": "FedEx",
+        "LoadContainer/Name": "BigBox"
+      },
+      {
+        "Material/Name": "Coke",
+        "Material/Description": "Soft Drinks",
+        "Material/LookupCode": "KO",
+        "Carrier/LookupCode": "UPS",
+        "LoadContainer/Name": "BlueBOX"
+      }
+    ]
   }
-
 }
